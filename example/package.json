@@ -1,0 +1,37 @@
+{
+  "name": "capacitor-app",
+  "version": "0.0.0",
+  "description": "Sunmi Camera-based barcode scanning plugin for Capacitor.js",
+  "main": "index.js",
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "scripts": {
+    "verify": "npm run verify:android && npm run verify:web",
+    "verify:android": "npx cap sync android",
+    "verify:web": "npm run build:web",
+    "start": "vite",
+    "build": "npm run build:android",
+    "build:android": "npm run build:web && npx cap sync android",
+    "build:web": "npm run cap-config && vite build",
+    "preview": "vite preview",
+    "cap-config": "npx trapeze run config.yaml --diff -y"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/camera": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "^5.0.0",
+    "@capacitor/splash-screen": "latest",
+    "@kduma-autoid/capacitor-sunmi-camera-scanner": "file:..",
+    "@kduma-autoid/capacitor-webview-watchdog": "^0.1.0",
+    "@trapezedev/configure": "^7.0.10"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "vite": "^2.9.13"
+  },
+  "author": "",
+  "license": "ISC"
+}
