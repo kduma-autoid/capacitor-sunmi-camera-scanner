@@ -56,7 +56,8 @@ public class SunmiCameraScannerPlugin extends Plugin {
     @PluginMethod
     public void scan(PluginCall call) throws JSONException {
         try {
-            Intent intent = new Intent("com.sunmi.scanner.qrscanner");
+            //Note: for the older version SunmiScanner v1.x.x
+            Intent intent = new Intent("com.summi.scan");
 
             intent.putExtra("PLAY_SOUND", call.getBoolean("play_sound", true));
             intent.putExtra("PLAY_VIBRATE", call.getBoolean("play_vibrate", false));
@@ -98,7 +99,8 @@ public class SunmiCameraScannerPlugin extends Plugin {
             try {
                 startActivityForResult(call, intent, "pickScanResultResult");
             } catch (ActivityNotFoundException e) {
-                intent.setAction("com.summi.scan");
+                //Note: if the device has ScannerHead v4.4.4 and above versions
+                intent.setAction("com.sunmi.scanner.qrscanner");
                 startActivityForResult(call, intent, "pickScanResultResult");
             }
         } catch (RuntimeException e) {
