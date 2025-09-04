@@ -2,6 +2,8 @@
 
 Capacitor plugin for interaction with Sunmi Camera-based barcode scanning library
 
+Check full documentation here: [opensource.duma.sh/libraries/capacitor/sunmi-camera-scanner](https://opensource.duma.sh/libraries/capacitor/sunmi-camera-scanner)
+
 ## Install
 
 ```bash
